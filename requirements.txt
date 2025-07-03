@@ -1,0 +1,5 @@
+qrcode
+Pillow
+requests
+python-dotenv
+PyQt5
