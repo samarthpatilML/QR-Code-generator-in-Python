@@ -6,9 +6,13 @@ import requests
 import io
 import threading
 import os
+from dotenv import load_dotenv
 
-# 🔐 Replace with your actual ImgBB API key
-IMGBB_API_KEY = "6c21e17ed1e741b2e8f127731233fb73"
+load_dotenv()
+IMGBB_API_KEY = os.getenv("IMGBB_API_KEY")
+if not IMGBB_API_KEY:
+    print("❌ IMGBB_API_KEY not found in .env")
+    sys.exit(1)
 
 class QRCodeGenerator:
     def __init__(self, root):
